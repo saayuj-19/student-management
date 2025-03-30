@@ -1,0 +1,35 @@
+create database students;
+
+CREATE TABLE student_data(
+  student_id INT NOT NULL PRIMARY KEY,
+  name VARCHAR(100),
+  age INT,
+  gender TEXT CHECK(gender IN ('Male','Female','Other')),
+  email VARCHAR(255) UNIQUE
+);
+
+CREATE TABLE courses(
+  course_id SERIAL PRIMARY KEY,
+  course_name VARCHAR(100) NOT NULL,
+  department_id INT,
+  credits INT NOT NULL
+);
+
+create table enrollments(
+    enrollment_id serial primary key,
+    student_id int references student_data(student_id) on delete cascade,
+    course_id int references courses(course_id) on delete cascade,
+    grade varchar(2)
+);
+
+CREATE TABLE departments (
+  department_id SERIAL PRIMARY KEY,
+  department_name VARCHAR(100) NOT NULL
+);
+
+INSERT INTO student (id, name, age, gender, email) VALUES
+(1, 'Amit Sharma', 20, 'Male', 'amit.sharma@example.com'),
+(2, 'Priya Singh', 22, 'Female', 'priya.singh@example.com'),
+(3, 'Rahul Verma', 21, 'Male', 'rahul.verma@example.com'),
+(4, 'Sneha Patil', 23, 'Female', 'sneha.patil@example.com'),
+(5, 'Aryan Joshi', 24, 'Other', 'aryan.joshi@example.com');
