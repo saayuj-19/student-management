@@ -1,10 +1,10 @@
 import psycopg2
 
 DB_NAME = "postgres"
-DB_USER = "postgres.zmadiqhihoxgcraydets"
+DB_USER = "postgres.pdoflvklqerhxpzvkpre"
 DB_PASSWORD = "3IGEvnN2sHG13iZF"
-DB_HOST = "aws-0-ap-southeast-1.pooler.supabase.com"
-DB_PORT = "6543"
+DB_HOST = "aws-0-ap-south-1.pooler.supabase.com"
+DB_PORT = "5432"
 def db_connection():
     try:
         conn =  psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST, port=DB_PORT)
@@ -21,7 +21,7 @@ def create_tables():
     CREATE TABLE students(
     student_id INT NOT NULL PRIMARY KEY,
     name VARCHAR(100),
-     age INT,
+    age INT,
     gender TEXT CHECK(gender IN ('Male','Female','Other')),
     email VARCHAR(255) UNIQUE
     )
