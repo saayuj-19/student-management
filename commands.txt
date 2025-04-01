@@ -70,3 +70,7 @@ WHERE enrollment_id = 2;
 
 DELETE FROM departments
 WHERE department_id = 1104;
+
+DROP TABLE student_data cascade;
+DROP TABLE courses cascade ;
+DROP TABLE enrollments cascade;
