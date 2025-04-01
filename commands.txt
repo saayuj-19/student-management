@@ -33,3 +33,41 @@ INSERT INTO student (id, name, age, gender, email) VALUES
 (3, 'Rahul Verma', 21, 'Male', 'rahul.verma@example.com'),
 (4, 'Sneha Patil', 23, 'Female', 'sneha.patil@example.com'),
 (5, 'Aryan Joshi', 24, 'Other', 'aryan.joshi@example.com');
+
+UPDATE students
+SET email = 'newemail@example.com'
+WHERE student_id = 1;
+UPDATE students
+SET email = 'newemail@example.com'
+WHERE student_id = 1;
+
+
+UPDATE courses
+SET credits = 5
+WHERE course_id = 33;
+
+
+UPDATE enrollments
+SET grade = 'A+'
+WHERE enrollment_id = 3;
+
+
+UPDATE departments
+SET department_name = 'Advanced Mathematics'
+WHERE department_id = 1101;
+
+
+DELETE FROM students
+WHERE student_id = 5;
+
+
+DELETE FROM courses
+WHERE course_id = 34;
+
+
+DELETE FROM enrollments
+WHERE enrollment_id = 2;
+
+
+DELETE FROM departments
+WHERE department_id = 1104;
